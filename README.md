@@ -1,2 +1,2 @@
-# 121---OpenTAP-PSU-Plugins
+# 121 - OpenTAP PSU Plugins
 Power Supply plugins for OpenTAP
