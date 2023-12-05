@@ -36,7 +36,6 @@
 
   <ItemGroup>
     <PackageReference Include="OpenTAP" Version="$(OpenTapVersion)" />
-	<OpenTAPPackageReference Include="WPF Controls" Version="9.17" />
   </ItemGroup>
 
 
