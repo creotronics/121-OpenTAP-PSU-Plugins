@@ -47,7 +47,7 @@ jobs:
           name: tap-package
           retention-days: 5
           path: |
-            bin/Release/*.TapPackage
+            ./121-OpenTAP_PSU_Plugins/bin/Release/*.TapPackage
 
   ##############
   ### TEST    ##
