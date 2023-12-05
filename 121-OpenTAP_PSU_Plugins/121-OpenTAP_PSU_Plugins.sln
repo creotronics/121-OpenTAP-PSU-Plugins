@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creotronics.OpenTAP.Instruments.PSU.API", "PSU API\Creotronics.OpenTAP.Instruments.PSU.API.csproj", "{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creotronics.OpenTAP.Instruments.PSU", "PSU Instruments\Creotronics.OpenTAP.Instruments.PSU.csproj", "{24049504-C96C-42F9-9F89-C1CA432B522E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91} = {50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creotronics.OpenTAP.Instruments.PSU.TestSteps", "PSU TestSteps\Creotronics.OpenTAP.Instruments.PSU.TestSteps.csproj", "{CA4416CC-EEBF-4429-934C-9B3D4306F984}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug CE|Any CPU = Debug CE|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Debug CE|Any CPU.ActiveCfg = Debug CE|Any CPU
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Debug CE|Any CPU.Build.0 = Debug CE|Any CPU
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D10465-DCD6-4ACE-ACB9-BF85C8B73C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Debug CE|Any CPU.ActiveCfg = Debug CE|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Debug CE|Any CPU.Build.0 = Debug CE|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24049504-C96C-42F9-9F89-C1CA432B522E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Debug CE|Any CPU.ActiveCfg = Debug CE|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Debug CE|Any CPU.Build.0 = Debug CE|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4416CC-EEBF-4429-934C-9B3D4306F984}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F3EC86A-FE1D-48FC-A61F-8FC9DAFF9E4E}
+	EndGlobalSection
+EndGlobal
