@@ -36,9 +36,9 @@ jobs:
         working-directory: ./121-OpenTAP_PSU_Plugins
         run: dotnet build -c Release
       # Create the tap package
-      - name: Package
-        working-directory: ./121-OpenTAP_PSU_Plugins/bin/Release
-        run: ./tap package create package.xml
+      #- name: Package
+      #  working-directory: ./121-OpenTAP_PSU_Plugins/bin/Release
+      #  run: ./tap package create package.xml
       # Upload the package so it can be downloaded from GitHub, 
       # and consumed by other steps in this workflow
       - name: Upload binaries
