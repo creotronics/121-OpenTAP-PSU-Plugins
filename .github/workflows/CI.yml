@@ -15,6 +15,18 @@ env:
 
 jobs:
 
+    GetVersion:
+        runs-on: ubuntu-20.04
+        outputs:
+            ShortVersion: ${{ steps.gitversion.outputs.ShortVersion }}
+            LongVersion: ${{ steps.gitversion.outputs.LongVersion }}
+            GitVersion: ${{ steps.gitversion.outputs.GitVersion }}
+        steps:
+        # The get-gitversion action installs OpenTAP and fetches with fetch-depth: 0
+        - name: GitVersion
+          id: gitversion
+          uses: opentap/get-gitversion@v1.1
+          
   ##############
   ### BUILD   ##
   ##############
