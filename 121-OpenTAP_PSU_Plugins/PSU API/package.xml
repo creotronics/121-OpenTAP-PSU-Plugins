@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+InfoLink: Specifies a location where additional information about the package can be found.
+Version: The version of the package. Must be in a semver 2.0 compatible format. This can be automatically updated from GIT.
+
+For Version the following macro is available (Only works if the project directory is under Git source control):
+$(GitVersion) - Gets the version from Git in the recommended format Major.Minor.Build-PreRelease+CommitHash.BranchName.
+-->
+<Package Name="Power supply API" 
+		 xmlns="http://opentap.io/schemas/package" 
+		 InfoLink="https://github.com/creotronics/121-OpenTAP-PSU-Plugins" 
+		 Version="$(GitVersion)" 
+		 OS="Windows,Linux"
+		 Group="Creotronics/Instruments/Power Supply">
+  <Description>
+	  General API for OpenTAP power supply instruments.
+	  <Status>Under development</Status>
+	  <Organisation>Creotronics</Organisation>
+	  <Contacts>
+		  <Contact Email="info@creotronics.org" Name="Support"/>
+	  </Contacts>
+	  <Links>
+		  <Link Description="Creotronics Website" Name="Website" Url="http://www.creotronics.be"/>
+	  </Links>
+  </Description>
+  <Owner>Creotronics</Owner>
+  <SourceUrl>https://github.com/creotronics/121-OpenTAP-PSU-Plugins</SourceUrl>
+  <SourceLicense>MIT</SourceLicense>
+  <Files>
+    <File Path="Packages/Creotronics.OpenTAP.Instruments.PSU.API/Creotronics.OpenTAP.Instruments.PSU.API.dll" SourcePath="Creotronics.OpenTAP.Instruments.PSU.API.dll">
+        <SetAssemblyInfo Attributes="Version"/>
+    </File>
+  </Files>
+</Package>

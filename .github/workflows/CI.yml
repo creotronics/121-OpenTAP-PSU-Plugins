@@ -1,7 +1,9 @@
 # Name of this CI unit.
 name: CI
 # What events trigger this action.
-on: [push]
+on: 
+    push:
+    pull_request:
 
 # Configure environment variables that are global to the action defined by this file
 env:
@@ -13,12 +15,22 @@ env:
 
 jobs:
 
+  GetVersion:
+    runs-on: ubuntu-latest
+    steps:
+      # The get-gitversion action installs OpenTAP and fetches with fetch-depth: 0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: '5.x'
+          
   ##############
   ### BUILD   ##
   ##############
 
   Build:
     runs-on: ubuntu-latest
+    needs: GetVersion
     steps:
       # Check out the files in this repository. 
       - name: Checkout
@@ -33,11 +45,12 @@ jobs:
         run: git fetch -f origin ${{ github.ref }}:${{ github.ref }} 
       # Build your project
       - name: Build
+        working-directory: ./121-OpenTAP_PSU_Plugins
         run: dotnet build -c Release
       # Create the tap package
-      - name: Package
-        working-directory: bin/Release
-        run: ./tap package create package.xml
+      #- name: Package
+      #  working-directory: ./121-OpenTAP_PSU_Plugins/bin/Release
+      #  run: ./tap package create package.xml
       # Upload the package so it can be downloaded from GitHub, 
       # and consumed by other steps in this workflow
       - name: Upload binaries
@@ -46,7 +59,7 @@ jobs:
           name: tap-package
           retention-days: 5
           path: |
-            bin/Release/*.TapPackage
+            ./121-OpenTAP_PSU_Plugins/bin/Release/*.TapPackage
 
   ##############
   ### TEST    ##
@@ -58,6 +71,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
+        working-directory: ./121-OpenTAP_PSU_Plugins
         run: dotnet test
 
   ##############
@@ -71,6 +85,7 @@ jobs:
       # This step depends on the build step
       needs:
         - Build
+        - UnitTests
       steps:
         # Download the tap-package artifact from the Build step
         - name: Download TapPackage Arfifact
