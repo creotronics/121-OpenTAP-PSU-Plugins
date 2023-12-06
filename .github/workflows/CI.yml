@@ -1,7 +1,9 @@
 # Name of this CI unit.
 name: CI
 # What events trigger this action.
-on: [push]
+on: 
+    push:
+    pull_request:
 
 # Configure environment variables that are global to the action defined by this file
 env:
