@@ -15,12 +15,22 @@ env:
 
 jobs:
 
+  GetVersion:
+    runs-on: ubuntu-latest
+    steps:
+      # The get-gitversion action installs OpenTAP and fetches with fetch-depth: 0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: '5.x'
+          
   ##############
   ### BUILD   ##
   ##############
 
   Build:
     runs-on: ubuntu-latest
+    needs: GetVersion
     steps:
       # Check out the files in this repository. 
       - name: Checkout
@@ -75,6 +85,7 @@ jobs:
       # This step depends on the build step
       needs:
         - Build
+        - UnitTests
       steps:
         # Download the tap-package artifact from the Build step
         - name: Download TapPackage Arfifact
