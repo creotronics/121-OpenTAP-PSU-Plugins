@@ -20,7 +20,7 @@ version = 0.1.0
 # A version is determined to be a "rc" prerelease if it originates from a branch that matches
 # the following regular expression.
 # Uncomment to change the default.
-#release branch = release[0-9x]*
+release branch = release\/[0-9.x]*
 
 # A version is determined to be a release (no prerelease identifiers, just the version number
 # specified in this file), if it originates from a commit that has an annotated tag that matches
