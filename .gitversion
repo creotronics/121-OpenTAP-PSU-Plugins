@@ -4,7 +4,7 @@
 # This is the version number that will be used. Prerelease numbers are calculated by 
 # counting git commits since the last change in this value.
 
-version = 0.1.0
+version = 0.2.2
 
 # A version is determined to be a "beta" prerelease if it originates from the default branch
 # The default branch is the first branch that matches the following regular expession.
@@ -20,7 +20,7 @@ version = 0.1.0
 # A version is determined to be a "rc" prerelease if it originates from a branch that matches
 # the following regular expression.
 # Uncomment to change the default.
-#release branch = release[0-9x]*
+release branch = release\/[0-9.x]*
 
 # A version is determined to be a release (no prerelease identifiers, just the version number
 # specified in this file), if it originates from a commit that has an annotated tag that matches
