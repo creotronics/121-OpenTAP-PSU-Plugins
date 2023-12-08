@@ -100,5 +100,6 @@ jobs:
             version: 9.17.4
             packages: "PackagePublish:rc"
         # Publish the package. This requires the package management key to be configured in the 'PUBLIC_REPO_PASS' environment variable.
-        - name: Publish
-          run: tap package publish -r http://packages.opentap.io -k ${{ secrets.PUBLIC_REPO_PASS }} *.TapPackage
+        # Don't publish on packages.opentap.io for now.
+        #- name: Publish
+        #  run: tap package publish -r http://packages.opentap.io -k ${{ secrets.PUBLIC_REPO_PASS }} *.TapPackage
